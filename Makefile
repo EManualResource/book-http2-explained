@@ -6,6 +6,7 @@ main:
 	cp -r ./remote/zh ./book
 	# build
 	gitbook build ./book ./dist/book
+	gitbook-ext minify --verbose ./dist/book
 	# package
 	cp ./remote/book.json ./dist/book
 	cp -rf ./_license ./dist/book/_license
