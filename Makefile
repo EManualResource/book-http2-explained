@@ -17,10 +17,11 @@ main:
 	rm -rf ./book #./source
 
 deploy:
-	-git checkout -b gh-pages
-	-git push origin gh-pages
-	-git checkout master
-	-git branch -D gh-pages
+	git push origin gh-pages
+	# -git checkout -b gh-pages
+	# -git push origin gh-pages
+	# -git checkout master
+	# -git branch -D gh-pages
 
     
 .PHONY: main
