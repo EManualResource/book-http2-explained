@@ -11,6 +11,8 @@ main:
 	cp ./remote/book.json ./dist/book
 	cp -rf ./_license ./dist/book/_license
 	tar -cvzf ./dist/book.tar.gz ./dist/book/
+	# post package
+	md5 -q ./dist/book.tar.gz > ./dist/md5
 	# clean up
 	rm -rf ./book #./source
 
