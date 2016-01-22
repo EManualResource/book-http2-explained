@@ -11,10 +11,10 @@ main:
 	cp ./remote/book.json ./dist/book
 	cp -rf ./_license ./dist/book/_license
 	# tar -cvzf ./dist/book.tar.gz ./dist/book/ #use zip instead
-	cd dist && zip -vr ./book.zip book/
+	cd dist && zip -vr ./http2-explained.zip ./book/ # 用数名做包名
 	# post package
 	# md5 -q ./dist/book.tar.gz > ./dist/md5
-	md5 -q ./dist/book.zip > ./dist/md5
+	md5 -q ./dist/http2-explained.zip > ./dist/md5
 	# clean up
 	rm -rf ./book #./source
 
