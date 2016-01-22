@@ -11,7 +11,7 @@ main:
 	cp ./remote/book.json ./dist/book
 	cp -rf ./_license ./dist/book/_license
 	# tar -cvzf ./dist/book.tar.gz ./dist/book/ #use zip instead
-	zip -vr ./dist/book.zip ./dist/book/
+	cd dist && zip -vr ./book.zip book/
 	# post package
 	# md5 -q ./dist/book.tar.gz > ./dist/md5
 	md5 -q ./dist/book.zip > ./dist/md5
