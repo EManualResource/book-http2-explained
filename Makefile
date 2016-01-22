@@ -1,7 +1,7 @@
 main:
 	-rm -rf dist
 	# @rm -rf ./remote
-	-git clone git@github.com:bagder/http2-explained.git remote
+	# -git clone git@github.com:bagder/http2-explained.git remote
 	# pre-build
 	cp -r ./remote/zh ./book
 	# build
@@ -10,9 +10,11 @@ main:
 	# package
 	cp ./remote/book.json ./dist/book
 	cp -rf ./_license ./dist/book/_license
-	tar -cvzf ./dist/book.tar.gz ./dist/book/
+	# tar -cvzf ./dist/book.tar.gz ./dist/book/ #use zip instead
+	zip -vr ./dist/book.zip ./dist/book/
 	# post package
-	md5 -q ./dist/book.tar.gz > ./dist/md5
+	# md5 -q ./dist/book.tar.gz > ./dist/md5
+	md5 -q ./dist/book.zip > ./dist/md5
 	# clean up
 	rm -rf ./book #./source
 
