@@ -32,7 +32,7 @@ package:
 	cd dist && zip -vr ./book.zip ./book/ 
 
 	# post package
-	md5 -q $(DEST)/book.zip > $(DEST)/md5
+	md5 $(DEST)/book.zip > $(DEST)/md5
 
 finish: 	
 	# clean up
