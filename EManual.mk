@@ -1,3 +1,5 @@
+MAKEFILE_VERSION=2
+
 SOURCE=./source
 SOURCE_CONFIG_FILE=$(SOURCE)/book.json
 TMP_BOOK=./book
@@ -19,7 +21,7 @@ pre-build:
 	cp -r $(SOURCE) $(TMP_BOOK)
 	rm -rf $(TMP_BOOK)/$(IGNORE)
 
-    # create book.json
+	# create book.json
 	gitbook-ext jsonmerge $(SOURCE_CONFIG_FILE) $(EXT_CONFIG_FILES) > $(TMP_BOOK)/book.json
 
 build:
@@ -29,7 +31,7 @@ build:
 package:
 	cp $(TMP_BOOK)/book.json $(DEST)/book
 	cp -rf $(EXT_LICENSE) $(DEST)/book/_license
-	cd dist && zip -vr ./book.zip ./book/ 
+	cd $(DEST) && zip -vr book.zip book/ 
 
 	# post package
 	md5 $(DEST)/book.zip > $(DEST)/md5
